@@ -30,7 +30,7 @@ const FarmsGrid = ({farms}: Props ) => {
 
   return (
     <>
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-1 tb:grid-cols-2 lg:grid-cols-3 gap-4">
         {farms.map((farm) => (
             <div key={farm.id} className="cursor-pointer h-fit flex flex-row items-center gap-4 border border-green-800 rounded-md p-4 bg-teal-50 hover:bg-[#09342e] hover:text-white"
             onClick={() => {
