@@ -1,23 +1,7 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/store/store';
-import { GoogleMap, useLoadScript, Polygon } from "@react-google-maps/api";
 import MapViewLarge from '../MapView/MapViewLarge';
-
-type Coordinate = { lat: number; lng: number };
-
-type GeoJSONFeature = {
-  type: string;
-  properties: {
-    projID: string;
-    P_Area: string;
-    Area_ha: number;
-  };
-  geometry: {
-    type: string;
-    coordinates: number[][][];
-  };
-};
 
 const FarmDetails = () => {
   const selectedFarm = useSelector((state: RootState) => state.farm.selectedFarm);

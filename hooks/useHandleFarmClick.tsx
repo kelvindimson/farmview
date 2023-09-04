@@ -1,4 +1,3 @@
-// useHandleFarmClick.ts
 "use Client"
 import { useDispatch } from 'react-redux';
 import { setFarms, setSelectedFarm } from '@/store/slice/farmSlice';
@@ -16,7 +15,6 @@ const useHandleFarmClick = () => {
     if (selectedFarm) {
       dispatch(setSelectedFarm(selectedFarm));
     } else {
-      // Handle the case where the farm is not found, perhaps set selectedFarm to null
       dispatch(setSelectedFarm(null));
     }
   };

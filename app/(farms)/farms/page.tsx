@@ -1,8 +1,6 @@
 import FarmsGrid from '@/components/FarmsGrid/FarmsGrid'
 import React from 'react'
 
-
-import Link from 'next/link'
 import getAllFarms from '@/lib/getAllFarms' 
 const FarmsPage = async () => {
   const farmsData: Promise<Farm[]> = getAllFarms()

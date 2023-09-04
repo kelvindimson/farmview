@@ -1,4 +1,3 @@
-
 import getAllFarms from '@/lib/getAllFarms' 
 import React from 'react'
 import FarmsGrid from '@/components/FarmsGrid/FarmsGrid'

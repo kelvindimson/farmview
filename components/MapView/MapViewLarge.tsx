@@ -66,12 +66,10 @@ const MapViewLarge = ({farm}: Props) => {
     
       const center = useMemo(() => {
         if (allCoordinates.length === 0) {
-          // console.error('Invalid or empty coordinates, using fallback center.');
           return defaultFallbackCenter;
         }
         const calculatedCenter = calculateCenterFromBounds(allCoordinates);
         if (isNaN(calculatedCenter.lat) || isNaN(calculatedCenter.lng)) {
-          // console.error('Invalid calculated center, using fallback center.');
           return defaultFallbackCenter;
         }
         return calculatedCenter;

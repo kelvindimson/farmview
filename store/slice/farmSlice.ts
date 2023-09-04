@@ -1,4 +1,3 @@
-// farmSlice.ts
 "use client"
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
@@ -22,7 +21,6 @@ const farmSlice = createSlice({
     setSelectedFarm: (state, action: PayloadAction<Farm | null>) => {
       state.selectedFarm = action.payload;
     },
-    // Add more reducers here as needed
   },
 });
 
