@@ -1,5 +1,5 @@
-import React, { useMemo, useState, useEffect } from 'react'
-import { GoogleMap, Polygon, useLoadScript, Marker } from "@react-google-maps/api";
+import React, { useMemo } from 'react'
+import { GoogleMap, useLoadScript } from "@react-google-maps/api";
 
 interface Props {
     farm: Farm;

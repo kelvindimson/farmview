@@ -3,17 +3,14 @@
 import Link from "next/link";
 import useHandleFarmClick from "@/hooks/useHandleFarmClick";
 import { useRouter } from 'next/navigation'
-import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
+import { useLoadScript } from "@react-google-maps/api";
 import MapViewSmall from "../MapView/MapViewSmall";
-import { useAutoAnimate } from '@formkit/auto-animate/react'
-
 
 interface Props {
     farms: Farm[];
 }
 
 const FarmsGrid = ({farms}: Props ) => {
-    const [animateRef] = useAutoAnimate<HTMLElement>();
 
     const handleFarmClick = useHandleFarmClick();
     const router = useRouter()
@@ -29,9 +26,11 @@ const FarmsGrid = ({farms}: Props ) => {
 
     if(!isLoaded) return <div>Loading...</div>
 
+    
+
   return (
     <>
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" ref={animateRef}>
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {farms.map((farm) => (
             <div key={farm.id} className="cursor-pointer h-fit flex flex-row items-center gap-4 border border-green-800 rounded-md p-4 bg-teal-50 hover:bg-[#09342e] hover:text-white"
             onClick={() => {
@@ -41,13 +40,18 @@ const FarmsGrid = ({farms}: Props ) => {
             >
                 
                 <MapViewSmall farm={farm} />
-                
-
                 <div className="">
-                    <h2 className="font-bold text-xl mb-2">{farm.name}</h2>
+                    <div className="mb-2">
+                    <h3 className="font-bold text-xl mb-2">{farm.name}</h3>
                     <p>Address: {farm.address}</p>
                     <p>Email: {farm.email}</p>
                     <p>Website: {farm.website}</p>
+                    </div>
+                    <button className="p-2 rounded-md bg-green-800 text-white hover:bg-green-600" >
+                        <Link href={`/farms/${farm.id}`}>
+                           View Details
+                        </Link>
+                    </button>
                 </div>
             </div>
             ))}
