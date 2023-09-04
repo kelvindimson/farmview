@@ -100,7 +100,7 @@ const MapViewLarge = ({farm}: Props) => {
     {isLoaded && (
       <GoogleMap
         mapContainerStyle={{ width: "100%", height: "100%", borderRadius: "inherit" }}
-        zoom={13}
+        zoom={14}
         center={center}
         options={mapOptions}
       >

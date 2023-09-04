@@ -11,7 +11,7 @@ const HomePage = async () => {
 
   return (
     <div className=''>
-      <h1 className="mb-3 text-3xl text-bold"> Welcome to Farm View </h1>
+      <h1 className="mb-3 text-2xl font-bold "> Welcome to Farm View </h1>
       <FarmsGrid farms={farms}/>
     </div>
   )

@@ -2,8 +2,11 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/store/store';
 import MapViewLarge from '../MapView/MapViewLarge';
+import { useRouter } from 'next/navigation'
+import { ChevronLeft } from 'lucide-react';
 
 const FarmDetails = () => {
+  const router = useRouter()
   const selectedFarm = useSelector((state: RootState) => state.farm.selectedFarm);
 
   let managementAreas = [];
@@ -18,10 +21,26 @@ const FarmDetails = () => {
     return <div>No Farms Found</div>;
   }
 
+  const goBack = () => {
+    router.back();
+  };
+
   return (
     <div className='flex flex-col gap-4'>
-      <h1 className='text-3xl font-bold '> Farm {selectedFarm.id} Details </h1>
-      <h2 className='font-bold '>Management Areas</h2>
+      <div className='flex justify-between items-center'>
+        <div>
+          <h1 className='text-3xl font-bold '> Farm {selectedFarm.id} Details </h1>
+          <h2 className='font-bold '>Management Areas</h2>
+        </div>
+
+        <div className=''>
+          <button className='p-2 rounded-md bg-green-800 text-white hover:bg-green-600 flex items-center'
+          onClick={() => router.back()}
+          >
+           <ChevronLeft /> Back
+          </button>
+        </div>
+      </div>
       <MapViewLarge farm={selectedFarm} />
       <div>
       <ul className='grid grid-cols-1 mg:grid-cols-2 lg:grid-cols-3 gap-2'>
