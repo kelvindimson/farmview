@@ -103,7 +103,7 @@ const MapViewLarge = ({farm}: Props) => {
         zoom={14}
         center={center}
         options={mapOptions}
-      >
+ >
         {managementAreas.map((area: { geometry: { coordinates: [any, any][][]; }; }, index: React.Key | null | undefined) => {
           const coordinates = area.geometry.coordinates[0].map(([lng, lat]) => ({ lat, lng }));
           return (
